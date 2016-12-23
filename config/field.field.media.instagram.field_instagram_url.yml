@@ -1,0 +1,25 @@
+uuid: ad5f12c0-5988-4b5f-b42a-40f8eb77d1c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_instagram_url
+    - media_entity.bundle.instagram
+  module:
+    - link
+_core:
+  default_config_hash: c5-pQQ8iuU2w61rkCWluDzeQBuvy7VgQZF2mGjk30vY
+id: media.instagram.field_instagram_url
+field_name: field_instagram_url
+entity_type: media
+bundle: instagram
+label: 'Instagram URL'
+description: 'URL of the Instagram post. Example url: https://www.instagram.com/p/BHak8cShinX/'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

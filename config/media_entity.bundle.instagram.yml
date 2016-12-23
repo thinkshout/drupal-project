@@ -1,0 +1,20 @@
+uuid: 64d2d9f2-be28-4557-8285-446b6f1284ed
+langcode: en
+status: true
+dependencies:
+  module:
+    - media_entity_instagram
+_core:
+  default_config_hash: sINwD3ue0xnnb4bQW9eKPAKkEf_AfnT7g-6zPT4YDgA
+id: instagram
+label: 'Instagram Post'
+description: 'Use this to attach Instagram posts to your content.'
+type: instagram
+queue_thumbnail_downloads: false
+new_revision: false
+type_configuration:
+  use_instagram_api: false
+  source_field: field_instagram_url
+  client_id: ''
+field_map:
+  shortcode: field_instagram_shortcode

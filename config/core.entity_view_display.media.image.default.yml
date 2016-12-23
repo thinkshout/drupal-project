@@ -1,0 +1,50 @@
+uuid: ea5e35a3-9a39-4e4d-84d6-00e74a4706d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.image.field_image
+    - image.style.media_crop
+    - media_entity.bundle.image
+  module:
+    - image
+    - user
+_core:
+  default_config_hash: OEJiytCdooD4v_2sFpUNN5aHtSClNW26kFVnToBcPU4
+id: media.image.default
+targetEntityType: media
+bundle: image
+mode: default
+content:
+  created:
+    label: hidden
+    type: timestamp
+    weight: 1
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+  field_image:
+    weight: 3
+    label: hidden
+    settings:
+      image_style: media_crop
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  name:
+    label: hidden
+    type: string
+    weight: 0
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  uid:
+    label: hidden
+    type: author
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  thumbnail: true

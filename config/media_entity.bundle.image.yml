@@ -1,0 +1,18 @@
+uuid: 02c44590-ecc9-4041-9cd5-a8377c49b527
+langcode: en
+status: true
+dependencies:
+  module:
+    - media_entity_image
+_core:
+  default_config_hash: O3XLtjrwdpZKx86Pjukq2yeG3yQLmNSM-aqhzP10wEA
+id: image
+label: Image
+description: 'Use Image for uploading locally hosted images.'
+type: image
+queue_thumbnail_downloads: false
+new_revision: true
+type_configuration:
+  source_field: field_image
+  gather_exif: false
+field_map: {  }

@@ -1,0 +1,52 @@
+uuid: ff7b24e5-b003-4f53-bf65-3daeb11b908d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
+    - field.field.media.tweet.field_tweet_author
+    - field.field.media.tweet.field_tweet_id
+    - field.field.media.tweet.field_tweet_url
+    - media_entity.bundle.tweet
+  module:
+    - media_entity_twitter
+    - user
+_core:
+  default_config_hash: JYeIqqewtkY9hjdroD2_LwZoVmadzRcR-b66TDga050
+id: media.tweet.media_library
+targetEntityType: media
+bundle: tweet
+mode: media_library
+content:
+  created:
+    label: hidden
+    type: timestamp
+    weight: 3
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+  field_tweet_url:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: twitter_embed
+  name:
+    label: hidden
+    type: string
+    weight: 0
+    settings:
+      link_to_entity: true
+    third_party_settings: {  }
+  uid:
+    label: hidden
+    type: author
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_tweet_author: true
+  field_tweet_id: true
+  thumbnail: true

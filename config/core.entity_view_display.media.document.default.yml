@@ -1,0 +1,58 @@
+uuid: 4a5162fa-8bf9-40d6-9a98-a16b7fbd17ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.document.field_document
+    - field.field.media.document.field_document_size
+    - field.field.media.document.field_mime_type
+    - media_entity.bundle.document
+  module:
+    - file
+    - user
+_core:
+  default_config_hash: N2uDaEFbYVamf9r_K1mxHLm6SZYey2Rnj71g6HP9VJs
+id: media.document.default
+targetEntityType: media
+bundle: document
+mode: default
+content:
+  created:
+    label: hidden
+    type: timestamp
+    weight: 0
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+  field_document:
+    type: file_default
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_document_size:
+    weight: 4
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+  name:
+    label: hidden
+    type: string
+    weight: -5
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  uid:
+    label: hidden
+    type: author
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_mime_type: true
+  thumbnail: true

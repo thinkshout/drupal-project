@@ -1,0 +1,23 @@
+uuid: 74d7ab7a-bbd8-4af0-8e2f-f5b3e9af1316
+langcode: en
+status: true
+dependencies:
+  module:
+    - media_entity
+_core:
+  default_config_hash: '-nn4hS3EEZVRXU53FS3fe6epiJ6yaH18yDlIFGbn5gI'
+id: media.field_instagram_shortcode
+field_name: field_instagram_shortcode
+entity_type: media
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
