@@ -22,6 +22,7 @@ dependencies:
     - sudo sed -e "s?%PROJECT_DIR%?web?g" --in-place /etc/apache2/sites-available/circle.conf
     - sudo sed -e "s?%SERVER%?SERVER?g" --in-place /etc/apache2/sites-available/circle.conf
     - sudo a2enmod rewrite
+    - sudo rm /etc/apache2/mods-enabled/php5.load
     - sudo service apache2 restart
     - composer install
   post:
