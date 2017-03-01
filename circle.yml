@@ -3,11 +3,12 @@ machine:
     America/Los_Angeles
   php:
     version: 7.0.7
-  hosts:
-    localhost: 127.0.0.1
-    site.dev: 127.0.0.1
   environment:
     PATH: $HOME/$CIRCLE_PROJECT_REPONAME/vendor/bin:$HOME/vendor/bin:$PATH
+    SERVER: site.dev
+  hosts:
+    localhost: 127.0.0.1
+    SERVER: 127.0.0.1
 dependencies:
   cache_directories:
     - ~/.composer/cache
@@ -23,6 +24,7 @@ dependencies:
     - sudo sed -e "s?%SERVER%?SERVER?g" --in-place /etc/apache2/sites-available/circle.conf
     - sudo a2enmod rewrite
     - sudo rm /etc/apache2/mods-enabled/php5.load
+    - sudo a2ensite circle.conf
     - sudo service apache2 restart
     - composer install
   post:
