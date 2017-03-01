@@ -17,10 +17,12 @@ dependencies:
     #- echo "date.timezone = America/Los_Angeles" > /opt/circleci/php/$(phpenv global)/etc/conf.d/timezone.ini
     - rm /opt/circleci/php/$(phpenv global)/etc/conf.d/xdebug.ini
     - composer global require "hirak/prestissimo:^0.3"
-    #- composer global require pantheon-systems/terminus
-    #- git config --global user.email "ci@thinkshout.com"
-    #- git config --global user.name "ThinkShout CI Bot"
-    #- terminus auth:login --machine-token=$PANTHEON_TOKEN
+    - cp circle.conf /etc/apache2/sites-available
+    - sudo sed -e "s?%HOME%?$(pwd)?g" --in-place /etc/apache2/sites-available/default
+    - sudo sed -e "s?%PROJECT_DIR%?web?g" --in-place /etc/apache2/sites-available/default
+    - sudo sed -e "s?%SERVER%?SERVER?g" --in-place /etc/apache2/sites-available/default
+    - sudo a2enmod rewrite
+    - sudo service apache2 restart
     - composer install
   post:
     - echo 'sendmail_path = /bin/true' >> /opt/circleci/php/$(phpenv global)/etc/conf.d/circle.ini
