@@ -6,7 +6,7 @@
 
 ## Development set-up
 
-This is a Drupal 8 site built using the [robo taskrunner](http://robo.li/). As such, it does not require separate `/project` and `~/Sites` folders. Install the repo directly into `~/Sites` using `git clone` and you will be ready to begin.  
+This is a Drupal 8 site built using the [robo taskrunner](http://robo.li/). As such, it does not require separate `/project` and `~/Projects` folders. Install the repo directly into `~/Projects` using `git clone` and you will be ready to begin.  
 
 First you need to [install composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx).
 
