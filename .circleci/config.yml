@@ -34,11 +34,11 @@ jobs:
             export PATH="./vendor/bin:../vendor/bin:/root/.composer/vendor/bin:$PATH"
             robo install
             robo test --profile ci
-      - deploy:
-          command: |
-            BRANCH_PATTERN='^[-0-9a-z]{1,11}$'
-            if [[ ${CIRCLE_BRANCH} =~  $BRANCH_PATTERN ]]; then
-              export PATH="./vendor/bin:../vendor/bin:/root/.composer/vendor/bin:$PATH"
-              terminus auth:login --machine-token=$PANTHEON_TOKEN
-              robo pantheon:deploy --y
-            fi
+#      - deploy:
+#          command: |
+#            BRANCH_PATTERN='^[-0-9a-z]{1,11}$'
+#            if [[ ${CIRCLE_BRANCH} =~  $BRANCH_PATTERN ]]; then
+#              export PATH="./vendor/bin:../vendor/bin:/root/.composer/vendor/bin:$PATH"
+#              terminus auth:login --machine-token=$PANTHEON_TOKEN
+#              robo pantheon:deploy --y
+#            fi
