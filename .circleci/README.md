@@ -12,5 +12,5 @@ https://circleci.com/gh/thinkshout/drupal-project/edit#env-vars
 
 ![screen shot 2017-06-04 at 9 17 38 am](https://cloud.githubusercontent.com/assets/999525/26763383/df9d21ec-4906-11e7-8298-2842e203e945.png)
 
-- [ ] If you wish to deploy a branch to a Multidev on pantheon for eas of testing, you can comment out the `-deploy` step
+- [ ] If you wish to deploy a branch to a Multidev on pantheon for eas of testing, you can uncomment out the `-deploy` step
 in the config.yml (also in this directory).
