@@ -1,0 +1,15 @@
+api_version: 1
+web_docroot: true
+php_version: 7.0
+drush_version: 8
+workflows:
+  clone_database:
+    after:
+      - type: webphp
+        description: Sanitize the db
+        script: scripts/pantheon/db_sanitization_drupal.php
+  deploy:
+    after:
+      - type: webphp
+        description: Log deployment to New Relic
+        script: scripts/pantheon/new_relic_deploy.php
