@@ -4,6 +4,10 @@
 
 **Note**: This project was forked from the [drupal-project](https://github.com/drupal-composer/drupal-project) repository.
 
+If you want to know how to use it as replacement for
+[Drush Make](https://github.com/drush-ops/drush/blob/8.x/docs/make.md) visit
+the [Documentation on drupal.org](https://www.drupal.org/node/2471553).
+
 ## Development set-up
 
 This is a Drupal 8 site built using the [robo taskrunner](http://robo.li/). As such, it does not require separate `/project` and `~/Projects` folders. Install the repo directly into `~/Projects` using `git clone` and you will be ready to begin.  
