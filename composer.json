@@ -121,20 +121,15 @@
         },
         "patches": {
             "drupal/core": {
-                "Telephone field with 5 digits or less fatally breaks formatter": "https://www.drupal.org/files/issues/min-length-telephone-link-2484693-26.patch",
-                "Repetitive warning message about uasort": "https://www.drupal.org/files/issues/2628884-3.patch",
-                "Plugin Lazy loading can cause usort warning": "https://www.drupal.org/files/issues/Iterating-through-array--2699157.patch",
+                "Telephone Link field formatter breaks Drupal with 5 digits or less in the number": "https://www.drupal.org/files/issues/2484693-47.patch",
+                "Database::startLog() cause a notice in Shortcut::sort()": "https://www.drupal.org/files/issues/2567035-surpress-uasort-contents-modified-errors-20.patch",
+                "Plugin Lazy loading can cause usort warning": "https://www.drupal.org/files/issues/2699157-23.drupal.Plugin-Lazy-loading-can-cause-usort-warning.patch",
                 "Make menu block follow active item": "https://www.drupal.org/files/issues/drupal-n2631468-95.patch",
-                "Fix views to correctly use IN queries that have an array of values": "https://www.drupal.org/files/issues/2744069-5-views-in-queries.patch",
-                "Problems with a number of views grouped filters": "https://www.drupal.org/files/issues/grouped_filters-2369119-104.patch",
                 "ImageWidget::validateRequiredFields() produces a PHP Warning message if triggering element is a non-button": "https://www.drupal.org/files/issues/2745491-15.patch",
                 "DrupalBehaviorError: attach ; quickedit: entityElement.get(...) is undefined https://www.drupal.org/node/2314185": "https://www.drupal.org/files/issues/drupalbehaviorerror-2314185-18.patch"
             },
             "drupal/ctools": {
                 "Views exposed filters missing autosubmit option https://www.drupal.org/node/2475595": "https://www.drupal.org/files/issues/2475595-ctools-autocomplete-fix-24.patch"
-            },
-            "drupal/simple_sitemap": {
-                "Fix \"invalid arg supplied for foreach()\" warning on install": "https://www.drupal.org/files/issues/simple_sitemap-invalid_argument_supplied_for_foreach_sitemap_generator-2846875-5.patch"
             }
         },
         "drupal-scaffold": {
