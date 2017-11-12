@@ -36,8 +36,8 @@
         "cweagans/composer-patches": "^1.6",
         "drupal-composer/drupal-scaffold": "^2.2",
         "drupal/console": "~1.0",
-        "drupal/core": "8.3.*",
-        "drush/drush": "~8.0",
+        "drupal/core": "8.4.*",
+        "drush/drush": "^8.1.9",
         "drupal/admin_toolbar": "1.18.0",
         "drupal/config_installer": "^1.4",
         "drupal/contact_storage": "1.0.0-beta8",
@@ -124,9 +124,7 @@
                 "Telephone Link field formatter breaks Drupal with 5 digits or less in the number": "https://www.drupal.org/files/issues/2484693-47.patch",
                 "Database::startLog() cause a notice in Shortcut::sort()": "https://www.drupal.org/files/issues/2567035-surpress-uasort-contents-modified-errors-20.patch",
                 "Plugin Lazy loading can cause usort warning": "https://www.drupal.org/files/issues/2699157-23.drupal.Plugin-Lazy-loading-can-cause-usort-warning.patch",
-                "Make menu block follow active item": "https://www.drupal.org/files/issues/drupal-n2631468-95.patch",
-                "ImageWidget::validateRequiredFields() produces a PHP Warning message if triggering element is a non-button": "https://www.drupal.org/files/issues/2745491-15.patch",
-                "DrupalBehaviorError: attach ; quickedit: entityElement.get(...) is undefined https://www.drupal.org/node/2314185": "https://www.drupal.org/files/issues/drupalbehaviorerror-2314185-18.patch"
+                "ImageWidget::validateRequiredFields() produces a PHP Warning message if triggering element is a non-button": "https://www.drupal.org/files/issues/2745491-15.patch"
             },
             "drupal/ctools": {
                 "Views exposed filters missing autosubmit option https://www.drupal.org/node/2475595": "https://www.drupal.org/files/issues/2475595-ctools-autocomplete-fix-24.patch"
