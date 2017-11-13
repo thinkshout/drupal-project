@@ -34,6 +34,12 @@ jobs:
             export PATH="./vendor/bin:../vendor/bin:/root/.composer/vendor/bin:$PATH"
             robo install
             robo test --profile ci
+      - run:
+          name: Run CS tests
+          command: |
+             export PATH="./vendor/bin:../vendor/bin:/root/.composer/vendor/bin:$PATH"
+             phpcs --config-set installed_paths ../../drupal/coder/coder_sniffer/
+             phpcs --standard=Drupal --ignore=*/css/*,*/node_modules/*,*/ODFW_icons/* /var/www/html/odfw/web/modules/custom /var/www/html/odfw/web/themes/custom
 #      - deploy:
 #          command: |
 #            BRANCH_PATTERN='^[-0-9a-z]{1,11}$'
