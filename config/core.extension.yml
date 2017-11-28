@@ -7,32 +7,42 @@ module:
   color: 0
   comment: 0
   config: 0
+  config_filter: 0
+  config_split: 0
   contact: 0
   contextual: 0
   datetime: 0
   dblog: 0
   dynamic_page_cache: 0
   editor: 0
+  email_registration: 0
   field: 0
+  field_group: 0
   field_ui: 0
   file: 0
   filter: 0
+  google_analytics: 0
   help: 0
   history: 0
   image: 0
   link: 0
   menu_ui: 0
+  metatag: 0
   node: 0
   options: 0
   page_cache: 0
   path: 0
   quickedit: 0
   rdf: 0
+  redirect: 0
   search: 0
   shortcut: 0
+  simple_sitemap: 0
+  smart_trim: 0
   system: 0
   taxonomy: 0
   text: 0
+  token: 0
   toolbar: 0
   tour: 0
   update: 0

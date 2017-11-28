@@ -21,7 +21,7 @@ default:
       blackbox: ~
       api_driver: drupal
       text:
-        username_field: "Username"
+        username_field: "E-mail"
       region_map:
          primary_nav: ".region-primary-nav"
          secondary_nav: ".region-secondary-nav"
