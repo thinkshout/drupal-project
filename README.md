@@ -12,6 +12,8 @@ the [Documentation on drupal.org](https://www.drupal.org/node/2471553).
 
 This is a Drupal 8 site built using the [robo taskrunner](http://robo.li/). As such, it does not require separate `/project` and `~/Projects` folders. Install the repo directly into `~/Projects` using `git clone` and you will be ready to begin.  
 
+This site uses PHP 7.1: make sure your local environment is running PHP 7.1 (you can run `php --version` to verify).
+
 First you need to [install composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx).
 
 `brew install composer`
