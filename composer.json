@@ -40,7 +40,7 @@
         "drupal/config_split": "^1.1",
         "drupal/console": "~1.0",
         "drupal/contact_storage": "1.0.0-beta8",
-        "drupal/core": "8.4.*",
+        "drupal/core": "8.5.0-beta1",
         "drupal/ctools": "3.0.0",
         "drupal/ds": "2.6.0",
         "drupal/editor_advanced_link": "^1.4",
@@ -65,6 +65,8 @@
         "drupal/smart_trim": "^1.0",
         "drupal/token": "1.0",
         "drush/drush": "^8.1.9",
+        "symfony/config": "3.4.x-dev",
+        "symfony/dependency-injection": "3.4.x-dev",
         "thinkshout/media": "dev-8.x-1.x",
         "webflo/drupal-finder": "^0.3.0",
         "webmozart/path-util": "^2.3"
