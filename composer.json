@@ -40,7 +40,7 @@
         "drupal/config_split": "^1.1",
         "drupal/console": "~1.0",
         "drupal/contact_storage": "1.0.0-beta8",
-        "drupal/core": "8.5.0-beta1",
+        "drupal/core": "8.5.x",
         "drupal/ctools": "3.0.0",
         "drupal/ds": "2.6.0",
         "drupal/editor_advanced_link": "^1.4",
