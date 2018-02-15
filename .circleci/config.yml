@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-       - image: thinkshout/nginx-php-fpm@php71ts
+       - image: thinkshout/nginx-php-fpm:php71
          environment:
            WEBROOT: /var/www/html/drupal-project/web
            GIT_EMAIL: "ci@thinkshout.com"
