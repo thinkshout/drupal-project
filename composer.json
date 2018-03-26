@@ -28,7 +28,7 @@
         },
         {
             "type": "git",
-            "url": "https://github.com/thinkshout/media.git"
+            "url": "https://github.com/thinkshout/bene_media.git"
         }
     ],
     "require": {
@@ -68,7 +68,7 @@
         "php": "^7.1",
         "symfony/config": "^3.4",
         "symfony/dependency-injection": "^3.4",
-        "thinkshout/media": "dev-8.x-1.x",
+        "thinkshout/bene_media": "dev-8.x-2.x",
         "webflo/drupal-finder": "^0.3.0",
         "webmozart/path-util": "^2.3"
     },
