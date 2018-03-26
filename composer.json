@@ -65,6 +65,7 @@
         "drupal/smart_trim": "^1.0",
         "drupal/token": "1.1",
         "drush/drush": "^8.1.9",
+        "php": "^7.1",
         "symfony/config": "^3.4",
         "symfony/dependency-injection": "^3.4",
         "thinkshout/media": "dev-8.x-1.x",
