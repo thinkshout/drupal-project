@@ -18,6 +18,6 @@ Steps to get items to deploy to Pantheon seem to be:
 - [ ] On Circle, add the project you just created to the list of builds: https://circleci.com/add-projects/gh/thinkshout
 - [ ] On Circle turn on the “Auto-cancel redundant builds” option under https://circleci.com/gh/thinkshout/[YOUR-PROJECt]/edit#advanced-settings 
 - [ ] If you wish to run phpcs tests (you do) uncomment the "Run CS tests" commands
-- [ ] If you wish to deploy a branch to a Multidev on pantheon for ease of testing, you can uncomment out the `-deploy` step
-in the config.yml (also in this directory).
+- [ ] If you wish to deploy to pantheon for ease of testing, you can uncomment out the `-deploy` step
+in the config.yml (also in this directory). Note: By default this command re-installs your site with each push. If you'd like to just push code but not wipe the database, change the line from `robo pantheon:deploy --install --y` to `robo pantheon:deploy --y`
 - [ ] Find and replace any instances of `drupal-project` in your config.yml file with the name of your repo.
