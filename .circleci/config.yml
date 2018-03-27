@@ -46,5 +46,5 @@ jobs:
 #            if [[ ${CIRCLE_BRANCH} =~  $BRANCH_PATTERN ]]; then
 #              export PATH="./vendor/bin:../vendor/bin:/root/.composer/vendor/bin:$PATH"
 #              terminus auth:login --machine-token=$PANTHEON_TOKEN
-#              robo pantheon:deploy --y
+#              robo pantheon:deploy --install --y
 #            fi
