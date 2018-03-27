@@ -7,6 +7,7 @@ local:
   extensions:
     Behat\MinkExtension:
       base_url: http://site.dev/
+      show_cmd: 'mv %s /Users/YOU/Sites/yoursite/docroot/behat_results.html; /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome http://site.dev/behat_results.html'
     Drupal\DrupalExtension:
       drupal:
         drupal_root: /Users/YOU/Sites/yoursite/docroot
