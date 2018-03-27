@@ -16,6 +16,8 @@ Steps to get items to deploy to Pantheon seem to be:
 - [ ]  In Circle.ci, add the PANTHEON_TOKEN associated with the "Pantheon - ThinkShout CI Bot" to the circle.ci Environment variables tab: https://circleci.com/gh/thinkshout/[YOUR PROJECT]/edit#env-vars 
 - [ ] On Circle, add the "Pantheon - ThinkShout CI Bot" Private-key to the circle.ci ssh permissions: https://circleci.com/gh/thinkshout/[YOUR PROJECT]/edit#ssh
 - [ ] On Circle, add the project you just created to the list of builds: https://circleci.com/add-projects/gh/thinkshout
-- [ ] If you wish to run phpcs tests (you do) uncomment the 
+- [ ] On Circle turn on the “Auto-cancel redundant builds” option under https://circleci.com/gh/thinkshout/[YOUR-PROJECt]/edit#advanced-settings 
+- [ ] If you wish to run phpcs tests (you do) uncomment the "Run CS tests" commands
 - [ ] If you wish to deploy a branch to a Multidev on pantheon for ease of testing, you can uncomment out the `-deploy` step
 in the config.yml (also in this directory).
+- [ ] Find and replace any instances of `drupal-project` in your config.yml file with the name of your repo.
