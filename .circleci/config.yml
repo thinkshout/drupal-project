@@ -7,6 +7,7 @@ jobs:
            WEBROOT: /var/www/html/drupal-project/web
            GIT_EMAIL: "ci@thinkshout.com"
            GIT_NAME: "ThinkShout CI Bot"
+           IS_CIRCLE: TRUE
          cmd: ["/start.sh"]
        - image: mariadb:10.0
          environment:

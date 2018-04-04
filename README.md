@@ -107,6 +107,8 @@ Test are run automatically on CircleCI, but can be run locally as well with:
 robo test
 ```
 
+For more information refer to the `behat/README.md` file.
+
 ## Updating contributed code
 
 ### Updating contrib modules
