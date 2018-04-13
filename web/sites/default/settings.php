@@ -80,11 +80,9 @@ if (!(getenv('DRUPAL_INSTALL') || $is_installer_url) && !empty($conf['redis_clie
 }
 
 /**
- * If there is a dev settings file, include it - but only when not in any of the
- * "prod" environments.
+ * If there is a dev settings file, include it - but only when not on pantheon.
  */
-$prod_envs = ['test', 'live', 'develop'];
-if (!defined('PANTHEON_ENVIRONMENT') || (defined('PANTHEON_ENVIRONMENT') && !in_array(PANTHEON_ENVIRONMENT, $prod_envs))) {
+if (!defined('PANTHEON_ENVIRONMENT')) {
   $dev_settings = __DIR__ . "/settings.dev.php";
   if (file_exists($dev_settings)) {
     include $dev_settings;
