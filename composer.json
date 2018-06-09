@@ -26,7 +26,6 @@
         "drupal-composer/drupal-scaffold": "^2.2",
         "drupal/admin_toolbar": "1.20.0",
         "drupal/config_installer": "^1.4",
-        "drupal/config_split": "^1.1",
         "drupal/console": "~1.0",
         "drupal/contact_storage": "1.0.0-beta8",
         "drupal/core": "8.5.x",
