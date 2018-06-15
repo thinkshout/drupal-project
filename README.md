@@ -34,7 +34,7 @@ You can also make this change permanent by editing your `~/.zshrc` file:
 Start inside the ~/Sites directory and build your site (replace 'new-project-name' with the name of the project folder):
 
 ```
-composer create-project thinkshout/drupal-project:8.x-pantheon-dev new-project-name --stability dev --no-interaction
+composer create-project thinkshout/drupal-project:8.x-pantheon-dev new-project-name --stability dev --no-interaction --prefer-dist
 ```
 
 Enter the new site folder:
