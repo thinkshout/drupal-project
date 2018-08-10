@@ -8,8 +8,8 @@ ci:
       base_url: http://127.0.0.1/
     Drupal\DrupalExtension:
       drupal:
-        drupal_root: '/var/www/html/drupal-project/web'
+        drupal_root: '/var/www/html/yoursite/web'
       drush:
-        root: '/var/www/html/drupal-project/web'
+        root: '/var/www/html/yoursite/web'
 imports:
   - behat.yml
