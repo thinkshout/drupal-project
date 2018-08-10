@@ -23,6 +23,8 @@
 # Ignored for Thinkshout setup
 bin
 
+# Ignore Mac files
+.DS_Store
 
 # Ignore generated config
 .env
