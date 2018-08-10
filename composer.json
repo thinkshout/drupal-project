@@ -62,6 +62,7 @@
     "require-dev": {
         "behat/mink": "~1.7",
         "behat/mink-goutte-driver": "~1.2",
+        "dmore/behat-chrome-extension": "^1.1",
         "drupal/coder": "^8.2",
         "drupal/config_suite": "^1.1",
         "drupal/devel": "^1.0-rc1",
