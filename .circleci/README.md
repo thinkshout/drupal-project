@@ -15,15 +15,15 @@ Steps to get items to deploy to Pantheon:
 - [ ] In the repo, give `env.dist` a TERMINUS_SITE and TS_HOST_REPO
 - [ ] On Circle, add the "Pantheon - ThinkShout CI Bot" (1password) Private-key to the circle.ci ssh permissions: https://circleci.com/gh/thinkshout/[YOUR PROJECT]/edit#ssh
 - [ ] On Circle, add the project you just created to the list of builds: https://circleci.com/add-projects/gh/thinkshout
-- [ ] On Circle turn on the “Auto-cancel redundant builds” option under https://circleci.com/gh/thinkshout/[YOUR-PROJECt]/edit#advanced-settings 
+- [ ] On Circle turn on the “Auto-cancel redundant builds” option under https://circleci.com/gh/thinkshout/[YOUR-PROJECt]/edit#advanced-settings
 - [ ] In the repo (`.cicrleci/config.yml`), if you wish to run phpcs tests (you do) uncomment the "Run CS tests" commands
 - [ ] In the repo (`.cicrleci/config.yml`), if you wish to deploy to pantheon for ease of testing, you can uncomment out the `-deploy` step. Note: By default this command re-installs your site with each push. If you'd like to just push code but not wipe the database, change the line from `robo pantheon:deploy --install --y` to `robo pantheon:deploy --y`
 - [ ] In the repo (`.cicrleci/config.yml`), find and replace any instances of `drupal-project` in your config.yml file with the name of your repo.
 
-Note: if you get an immidiate CirclCI error such as:
+Note: if you get an immediate CirclCI error such as:
 ~~~
 2 schema violations found
   required key [jobs] not found
   required key [version] not found
 ~~~
-Check the formatting of the `.cicrleci/config.yml` file - *spaces/indentaion matter*! 
+Check the formatting of the `.cicrleci/config.yml` file - *spaces/indentation matters*!
