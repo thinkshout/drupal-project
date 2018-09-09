@@ -7,6 +7,9 @@ module:
   color: 0
   comment: 0
   config: 0
+  config_filter: 0
+  config_rewrite: 0
+  config_split: 0
   contact: 0
   contextual: 0
   datetime: 0
@@ -29,9 +32,9 @@ module:
   page_cache: 0
   path: 0
   quickedit: 0
-  redis: 0
   rdf: 0
   redirect: 0
+  redis: 0
   search: 0
   shortcut: 0
   smart_trim: 0
@@ -46,12 +49,11 @@ module:
   views_ui: 0
   menu_link_content: 1
   views: 10
-  standard: 1000
 theme:
   stable: 0
   classy: 0
   bartik: 0
   seven: 0
-profile: standard
+profile: minimal
 _core:
   default_config_hash: m2GVq11UAOVuNgj8x0t5fMOPujpvQQ_zxLoaly1BMEU
