@@ -42,20 +42,11 @@ else {
   $config_directories[CONFIG_SYNC_DIRECTORY] = '../config';
 }
 
-// Check for custom DRUPAL_INSTALL environment variable (set in
-// drush/SITE.drush.inc) OR PANTHEON_ENVIRONMENT to determine if we should
-// enable file base config. We only use file based for local development.
-// We could use a module like config_devel locally as well.
-if (!(getenv('DRUPAL_INSTALL') || defined('PANTHEON_ENVIRONMENT') || getenv('IS_CIRCLE'))) {
-  // Bootstrap file based config.
-  $settings['bootstrap_config_storage'] = array(
-    'Drupal\Core\Config\BootstrapConfigStorageFactory',
-    'getFileStorage'
-  );
-
-  $config_directories[CONFIG_ACTIVE_DIRECTORY] = $config_directories[CONFIG_SYNC_DIRECTORY];
-
-  $settings['container_yamls'][] = DRUPAL_ROOT . '/sites/default/services.config.yml';
+if (defined('PANTHEON_ENVIRONMENT')) {
+  $config['config_split.config_split.local']['status'] = FALSE;
+}
+else {
+  $config['config_split.config_split.local']['status'] = TRUE;
 }
 
 // If we are not installing and have a redis host defined, setup redis.
