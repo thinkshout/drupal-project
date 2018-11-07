@@ -67,8 +67,6 @@
         "drupal/coder": "^8.2",
         "drupal/config_suite": "^1.1",
         "drupal/devel": "^1.0-rc1",
-        "drupal/drupal-driver": "dev-master",
-        "drupal/drupal-extension": "v4.0.0alpha2",
         "drupal/stage_file_proxy": "1.x-dev",
         "drupal/twig_xdebug": "^1.0",
         "drush-ops/behat-drush-endpoint": "dev-master",
