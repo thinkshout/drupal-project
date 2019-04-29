@@ -1,16 +1,12 @@
 module:
-  automated_cron: 0
   block: 0
   block_content: 0
   breakpoint: 0
   ckeditor: 0
-  color: 0
-  comment: 0
   config: 0
   config_filter: 0
   config_rewrite: 0
   config_split: 0
-  contact: 0
   contextual: 0
   datetime: 0
   dblog: 0
@@ -23,14 +19,12 @@ module:
   file: 0
   filter: 0
   help: 0
-  history: 0
   image: 0
   link: 0
   menu_ui: 0
   node: 0
   options: 0
   path: 0
-  quickedit: 0
   rdf: 0
   redirect: 0
   redis: 0
@@ -42,16 +36,16 @@ module:
   text: 0
   token: 0
   toolbar: 0
-  tour: 0
   update: 0
   user: 0
   views_ui: 0
   menu_link_content: 1
   views: 10
+  minimal: 1000
 theme:
+  stark: 0
   stable: 0
   classy: 0
-  bartik: 0
   seven: 0
 profile: minimal
 _core:

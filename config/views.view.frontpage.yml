@@ -31,7 +31,7 @@ display:
       empty:
         area_text_custom:
           admin_label: ''
-          content: 'No front page content has been created yet.'
+          content: 'No front page content has been created yet.<br/>Follow the <a target="_blank" href="https://www.drupal.org/docs/user_guide/en/index.html">User Guide</a> to start building your site.'
           empty: true
           field: area_text_custom
           group_type: group
@@ -108,7 +108,7 @@ display:
           operator: '='
           relationship: none
           table: node_field_data
-          value: true
+          value: '1'
           plugin_id: boolean
           entity_type: node
           entity_field: promote
@@ -119,7 +119,7 @@ display:
           group: 1
           id: status
           table: node_field_data
-          value: true
+          value: '1'
           plugin_id: boolean
           entity_type: node
           entity_field: status
