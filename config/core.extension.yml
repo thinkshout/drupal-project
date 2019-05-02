@@ -5,7 +5,6 @@ module:
   ckeditor: 0
   config: 0
   config_filter: 0
-  config_rewrite: 0
   config_split: 0
   contextual: 0
   datetime: 0
@@ -25,16 +24,11 @@ module:
   node: 0
   options: 0
   path: 0
-  rdf: 0
   redirect: 0
-  redis: 0
-  search: 0
-  shortcut: 0
   smart_trim: 0
   system: 0
   taxonomy: 0
   text: 0
-  token: 0
   toolbar: 0
   update: 0
   user: 0
