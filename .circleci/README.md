@@ -9,7 +9,7 @@ with
 
 
 Steps to get items to deploy to Pantheon:
-- [ ] On Pantheon, set up a pantheon site.
+- [ ] On Pantheon, set up a Pantheon site.
 - [ ] In the repo, give `env.dist` a TERMINUS_SITE and TS_HOST_REPO
 - [ ] On Circle, add the project you just created to the list of builds: https://circleci.com/add-projects/gh/thinkshout
 - [ ] On Circle turn on the “Auto-cancel redundant builds” option under https://circleci.com/gh/thinkshout/[YOUR-PROJECT]/edit#advanced-settings
