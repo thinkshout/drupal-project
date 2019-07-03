@@ -53,7 +53,7 @@
         "drupal/simple_sitemap": "^2.12",
         "drupal/smart_trim": "^1.1",
         "drupal/token": "^1.1",
-        "drupal/upgrade_status": "1.0-alpha3",
+        "drupal/upgrade_status": "1.0.0-alpha5",
         "drush/drush": "^8.1.17",
         "symfony/config": "^3.4.0",
         "symfony/dependency-injection": "^3.4.0",
@@ -75,7 +75,6 @@
         "jcalderonzumba/mink-phantomjs-driver": "~0.3.1",
         "mikey179/vfsstream": "~1.2",
         "pantheon-systems/ci-scripts": "*",
-        "phpunit/phpunit": ">=4.8.28 <5",
         "symfony/css-selector": "~2.8",
         "thinkshout/robo-drupal": "^1.0.0"
     },
