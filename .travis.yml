@@ -3,9 +3,10 @@ dist: trusty
 sudo: false
 
 php:
-  - 5.6
   - 7.0
   - 7.1
+  - 7.2
+  - 7.3
 
 env:
   global:
@@ -23,14 +24,12 @@ before_install:
   - composer --version
 
 install:
+  - composer --verbose validate
   - composer --verbose install
 
 script:
   - if [[ $RELEASE = dev ]]; then composer --verbose remove --no-update drupal/console; fi;
-  # Remove symfony/routing once https://www.drupal.org/node/2882456 is fixed
-  # @see https://www.drupal.org/node/2887000
-  # @see https://www.drupal.org/node/2874909
-  - if [[ $RELEASE = dev ]]; then composer --verbose require --no-update symfony/event-dispatcher:~3.2.9 symfony/routing:~3.2.9 drupal/core:8.4.x-dev drush/drush:9.0.x-dev; fi;
+  - if [[ $RELEASE = dev ]]; then composer --verbose require --no-update drupal/core:8.8.x-dev webflo/drupal-core-require-dev:8.8.x-dev; fi;
   - if [[ $RELEASE = dev ]]; then composer --verbose update; fi;
   - cd $TRAVIS_BUILD_DIR/web
   - ./../vendor/bin/drush site-install --verbose --yes --db-url=sqlite://tmp/site.sqlite
@@ -38,6 +37,7 @@ script:
   - until curl -s $SIMPLETEST_BASE_URL; do true; done > /dev/null
   # Skip core/tests/Drupal/Tests/ComposerIntegrationTest.php because web/ has no composer.json
   # Ignore PageCache group temporarily, @see https://www.drupal.org/node/2770673
-  - ./../vendor/bin/phpunit -c core --testsuite unit --exclude-group Composer,DependencyInjection,PageCache
+  # Ignore Setup group temporarily, @see https://www.drupal.org/node/2962157
+  - ./../vendor/bin/phpunit -c core --testsuite unit --exclude-group Composer,DependencyInjection,PageCache,Setup
   - ./../vendor/bin/drush
   - if [[ $RELEASE = stable ]]; then ./../vendor/bin/drupal; fi;
