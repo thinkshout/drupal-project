@@ -2,31 +2,32 @@ version: 2
 jobs:
   build:
     docker:
-       - image: thinkshout/nginx-php-fpm@php72
-         environment:
-           WEBROOT: /var/www/html/drupal-project/web
-           GIT_EMAIL: "ci@thinkshout.com"
-           GIT_NAME: "ThinkShout CI Bot"
-         cmd: ["/start.sh"]
-       - image: mariadb:10.0
-         environment:
-           MYSQL_RANDOM_ROOT_PASSWORD: 1
-           MYSQL_DATABASE: drupal
-           MYSQL_USER: drupal
-           MYSQL_PASSWORD: drupal
-    working_directory: /var/www/html/drupal-project
+    - image: thinkshout/nginx-php-fpm:php72
+      environment:
+        WEBROOT: /var/www/html/freedomhouse/web
+        GIT_EMAIL: "ci@thinkshout.com"
+        GIT_NAME: "ThinkShout CI Bot"
+        IS_CIRCLE: TRUE
+      command: ["/start.sh"]
+    - image: mariadb:10.0
+      environment:
+        MYSQL_RANDOM_ROOT_PASSWORD: 1
+        MYSQL_DATABASE: drupal
+        MYSQL_USER: drupal
+        MYSQL_PASSWORD: drupal
+    working_directory: /var/www/html/freedomhouse
     steps:
-      - checkout
-      - type: add-ssh-keys
-      - run:
-          name: Project configuration
-          command: |
-            export PATH="./vendor/bin:../vendor/bin:/root/.composer/vendor/bin:$PATH"
-            composer install --prefer-dist
-            robo configure --db-name=drupal --db-user=drupal --db-pass=drupal --db-host=127.0.0.1
-      - run:
-          name: Install and test
-          command: |
-            export PATH="./vendor/bin:../vendor/bin:/root/.composer/vendor/bin:$PATH"
-            robo install
-            robo test --profile ci
+    - checkout
+    - add_ssh_keys
+    - run:
+        name: Project configuration
+        command: |
+          export PATH="./vendor/bin:../vendor/bin:/root/.composer/vendor/bin:$PATH"
+          composer install --prefer-dist
+          robo configure --db-name=drupal --db-user=drupal --db-pass=drupal --db-host=127.0.0.1
+    - run:
+        name: Install and test
+        command: |
+          export PATH="./vendor/bin:../vendor/bin:/root/.composer/vendor/bin:$PATH"
+          robo install
+          robo test --profile ci
