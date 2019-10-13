@@ -22,6 +22,7 @@ jobs:
     - run:
         name: Project configuration
         command: |
+          echo "memory_limit = 512M"  >> ${php_vars}
           export PATH="./vendor/bin:../vendor/bin:/root/.composer/vendor/bin:$PATH"
           composer install --prefer-dist
           robo configure --db-name=drupal --db-user=drupal --db-pass=drupal --db-host=127.0.0.1
