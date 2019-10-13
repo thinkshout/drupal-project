@@ -24,7 +24,8 @@ jobs:
         command: |
           echo "memory_limit = 512M"  >> ${php_vars}
           export PATH="./vendor/bin:../vendor/bin:/root/.composer/vendor/bin:$PATH"
-          composer install --prefer-dist
+          composer global require -n "hirak/prestissimo:^0.3"
+          composer install
           robo configure --db-name=drupal --db-user=drupal --db-pass=drupal --db-host=127.0.0.1
     - run:
         name: Install and test
