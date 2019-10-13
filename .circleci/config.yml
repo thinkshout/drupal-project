@@ -4,7 +4,7 @@ jobs:
     docker:
     - image: thinkshout/nginx-php-fpm:php72
       environment:
-        WEBROOT: /var/www/html/freedomhouse/web
+        WEBROOT: /var/www/html/drupal-project/web
         GIT_EMAIL: "ci@thinkshout.com"
         GIT_NAME: "ThinkShout CI Bot"
         IS_CIRCLE: TRUE
@@ -15,7 +15,7 @@ jobs:
         MYSQL_DATABASE: drupal
         MYSQL_USER: drupal
         MYSQL_PASSWORD: drupal
-    working_directory: /var/www/html/freedomhouse
+    working_directory: /var/www/html/drupal-project
     steps:
     - checkout
     - add_ssh_keys

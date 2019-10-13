@@ -30,7 +30,7 @@
     },
     "require-dev": {
         "drupal/drupal-extension": "~3.0",
-        "thinkshout/robo-drupal": "^1.0",
+        "thinkshout/robo-drupal": "dev-master",
         "webflo/drupal-core-require-dev": "^8.7.0"
     },
     "conflict": {
