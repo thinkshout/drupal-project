@@ -24,12 +24,12 @@
 # Ignored for Thinkshout setup
 bin
 
-
-# Ignore generated config
-.env
-
 # Ignore local settings
 sites/default/settings.local.php
 
 # Ignore CSS map files
 style.css.map
+
+# Ignore .env files as they are personal
+/.env
+

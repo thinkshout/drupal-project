@@ -1,140 +1,57 @@
-[![CircleCI](https://circleci.com/gh/thinkshout/drupal-project/tree/8.x-pantheon.svg?style=svg)](https://circleci.com/gh/thinkshout/drupal-project/tree/8.x-pantheon)
+# Composer template for Drupal projects
 
-# Drupal Project (Pantheon edition)
+[![Build Status](https://travis-ci.org/drupal-composer/drupal-project.svg?branch=8.x)](https://travis-ci.org/drupal-composer/drupal-project)
 
-**Note**: This project was forked from the [drupal-project](https://github.com/drupal-composer/drupal-project) repository.
+This project template provides a starter kit for managing your site
+dependencies with [Composer](https://getcomposer.org/).
 
 If you want to know how to use it as replacement for
 [Drush Make](https://github.com/drush-ops/drush/blob/8.x/docs/make.md) visit
 the [Documentation on drupal.org](https://www.drupal.org/node/2471553).
 
-## Development set-up
-
-This is a Drupal 8 site built using the [robo taskrunner](http://robo.li/). As such, it does not require separate `/project` and `~/Projects` folders. Install the repo directly into `~/Projects` using `git clone` and you will be ready to begin.  
+## Usage
 
 First you need to [install composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx).
 
-`brew install composer`
+> Note: The instructions below refer to the [global composer installation](https://getcomposer.org/doc/00-intro.md#globally).
+You might need to replace `composer` with `php composer.phar` (or similar)
+for your setup.
 
-Next add `./vendor/bin` to your PATH, at the beginning of your PATH variable, if it is not already there.
-
-Check with:
-`echo $PATH`
-
-Update with:
-`export PATH=./vendor/bin:$PATH`
-
-You can also make this change permanent by editing your `~/.zshrc` file:
-`export PATH="./vendor/bin:...`
-
-### Initial build (new repo)
-
-Start inside the ~/Sites directory and build your site (replace 'new-project-name' with the name of the project folder):
+After that you can create the project:
 
 ```
-composer create-project thinkshout/drupal-project:8.x-pantheon-dev new-project-name --stability dev --no-interaction
+composer create-project drupal-composer/drupal-project:8.x-dev some-dir --no-interaction
 ```
 
-Enter the new site folder:
-
-```
-cd new-project-name
-```
-
-Initialize a repository on github https://github.com/new that matches your project name and connect your local directory to it:
-
-```
-git init
-git add .
-git commit -m "Initial commit."
-git remote add origin git@github.com:thinkshout/new-project-name.git
-git push -u origin master
-```
-
-To initialize the project name in several of the files run:
-
-```
-composer install
-robo init
-```
-
-### Initial build (existing repo)
-
-From within your `~/Sites` directory run:
-
-```
-git clone git@github.com:thinkshout/new-project-name.git
-cd new-project-name
-composer install
-```
-
-### Building
-
-Running the `robo configure` command will read the .env.dist, cli arguments and
-your local environment (`DEFAULT_PRESSFLOW_SETTINGS`) to generate a .env file. This file will be used to set
-the database and other standard configuration options. If no database name is provided, the project name and the git branch name will be used. If no database name is provided, the project name and the git branch name will be used. Note the argument to pass to robo configure can include: --db-pass; --db-user; --db-name; --db-host.
-
-```
-robo configure
-# Use an alternate DB password
-robo configure --db-pass=<YOUR LOCAL DATABASE PASSWORD>
-# Use an alternate DB name
-robo configure --db-name=<YOUR DATABASE NAME>
-```
-
-The structure of `DEFAULT_PRESSFLOW_SETTINGS` if you want to set it locally is:
-
-```
-DEFAULT_PRESSFLOW_SETTINGS_={"databases":{"default":{"default":{"driver":"mysql","prefix":"","database":"","username":"root","password":"root","host":"localhost","port":3306}}},"conf":{"pressflow_smart_start":true,"pantheon_binding":null,"pantheon_site_uuid":null,"pantheon_environment":"local","pantheon_tier":"local","pantheon_index_host":"localhost","pantheon_index_port":8983,"redis_client_host":"localhost","redis_client_port":6379,"redis_client_password":"","file_public_path":"sites\/default\/files","file_private_path":"sites\/default\/files\/private","file_directory_path":"site\/default\/files","file_temporary_path":"\/tmp","file_directory_temp":"\/tmp","css_gzip_compression":false,"js_gzip_compression":false,"page_compression":false},"hash_salt":"","config_directory_name":"sites\/default\/config","drupal_hash_salt":""}
-```
-
-### Installing
-
-Running the robo install command will run composer install to add all required
-dependencies and then install the site and import the exported configuration.
-
-```
-robo install
-```
-
-### Testing
-
-Test are run automatically on CircleCI, but can be run locally as well with:
-
-```
-robo test
-```
-
-## Updating contributed code
-
-### Updating contrib modules
-
-With `composer require drupal/{module_name}` you can download new dependencies to your
+With `composer require ...` you can download new dependencies to your
 installation.
 
 ```
-composer require drupal/devel:8.*
+cd some-dir
+composer require drupal/devel:~1.0
 ```
 
-### Applying patches to contrib modules
+The `composer create-project` command passes ownership of all files to the
+project that is created. You should create a new git repository, and commit
+all files not excluded by the .gitignore file.
 
-If you need to apply patches (depending on the project being modified, a pull
-request is often a better solution), you can do so with the
-[composer-patches](https://github.com/cweagans/composer-patches) plugin.
+## What does the template do?
 
-To add a patch to drupal module "foobar" insert the patches section in the `extra`
-section of composer.json:
-```json
-"extra": {
-    "patches": {
-        "drupal/foobar": {
-            "Patch description": "URL to patch"
-        }
-    }
-}
-```
+When installing the given `composer.json` some tasks are taken care of:
 
-### Updating Drupal Core
+* Drupal will be installed in the `web`-directory.
+* Autoloader is implemented to use the generated composer autoloader in `vendor/autoload.php`,
+  instead of the one provided by Drupal (`web/vendor/autoload.php`).
+* Modules (packages of type `drupal-module`) will be placed in `web/modules/contrib/`
+* Theme (packages of type `drupal-theme`) will be placed in `web/themes/contrib/`
+* Profiles (packages of type `drupal-profile`) will be placed in `web/profiles/contrib/`
+* Creates default writable versions of `settings.php` and `services.yml`.
+* Creates `web/sites/default/files`-directory.
+* Latest version of drush is installed locally for use at `vendor/bin/drush`.
+* Latest version of DrupalConsole is installed locally for use at `vendor/bin/drupal`.
+* Creates environment variables based on your .env file. See [.env.example](.env.example).
+
+## Updating Drupal Core
 
 This project will attempt to keep all of your Drupal Core files up-to-date; the
 project [drupal-composer/drupal-scaffold](https://github.com/drupal-composer/drupal-scaffold)
@@ -145,7 +62,7 @@ new release of Drupal core.
 
 Follow the steps below to update your core files.
 
-1. Run `composer update drupal/core --with-dependencies` to update Drupal Core and its dependencies.
+1. Run `composer update drupal/core webflo/drupal-core-require-dev "symfony/*" --with-dependencies` to update Drupal Core and its dependencies.
 1. Run `git diff` to determine if any of the scaffolding files have changed.
    Review the files for any changes and restore any customizations to
   `.htaccess` or `robots.txt`.
@@ -157,3 +74,72 @@ Follow the steps below to update your core files.
    of a [three-way merge tool such as kdiff3](http://www.gitshah.com/2010/12/how-to-setup-kdiff-as-diff-tool-for-git.html). This setup is not necessary if your changes are simple;
    keeping all of your modifications at the beginning or end of the file is a
    good strategy to keep merges easy.
+
+## Generate composer.json from existing project
+
+With using [the "Composer Generate" drush extension](https://www.drupal.org/project/composer_generate)
+you can now generate a basic `composer.json` file from an existing project. Note
+that the generated `composer.json` might differ from this project's file.
+
+
+## FAQ
+
+### Should I commit the contrib modules I download?
+
+Composer recommends **no**. They provide [argumentation against but also
+workrounds if a project decides to do it anyway](https://getcomposer.org/doc/faqs/should-i-commit-the-dependencies-in-my-vendor-directory.md).
+
+### Should I commit the scaffolding files?
+
+The [drupal-scaffold](https://github.com/drupal-composer/drupal-scaffold) plugin can download the scaffold files (like
+index.php, update.php, …) to the web/ directory of your project. If you have not customized those files you could choose
+to not check them into your version control system (e.g. git). If that is the case for your project it might be
+convenient to automatically run the drupal-scaffold plugin after every install or update of your project. You can
+achieve that by registering `@composer drupal:scaffold` as post-install and post-update command in your composer.json:
+
+```json
+"scripts": {
+    "post-install-cmd": [
+        "@composer drupal:scaffold",
+        "..."
+    ],
+    "post-update-cmd": [
+        "@composer drupal:scaffold",
+        "..."
+    ]
+},
+```
+### How can I apply patches to downloaded modules?
+
+If you need to apply patches (depending on the project being modified, a pull
+request is often a better solution), you can do so with the
+[composer-patches](https://github.com/cweagans/composer-patches) plugin.
+
+To add a patch to drupal module foobar insert the patches section in the extra
+section of composer.json:
+```json
+"extra": {
+    "patches": {
+        "drupal/foobar": {
+            "Patch description": "URL or local path to patch"
+        }
+    }
+}
+```
+### How do I switch from packagist.drupal-composer.org to packages.drupal.org?
+
+Follow the instructions in the [documentation on drupal.org](https://www.drupal.org/docs/develop/using-composer/using-packagesdrupalorg).
+
+### How do I specify a PHP version ?
+
+This project supports PHP 7.0 as minimum version (see [Drupal 8 PHP requirements](https://www.drupal.org/docs/8/system-requirements/drupal-8-php-requirements)), however it's possible that a `composer update` will upgrade some package that will then require PHP 7+.
+
+To prevent this you can add this code to specify the PHP version you want to use in the `config` section of `composer.json`:
+```json
+"config": {
+    "sort-packages": true,
+    "platform": {
+        "php": "7.0.33"
+    }
+},
+```
