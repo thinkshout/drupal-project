@@ -1,13 +1,3 @@
-Prescriptive Circle configuration:
-- [ ] If you aren't getting the latest build of our container, you can force the version using the "docker: image:" in `.circle/config.yml` by adding the commit ID. You can found out the latest ID by running `docker pull thinkshout/nginx-php-fpm:php70` on your local machine. To do this, replace:
-
-`       - image: thinkshout/nginx-php-fpm`
-
-with
-
-`       - image: thinkshout/nginx-php-fpm:php71`
-
-
 Steps to get items to deploy to Pantheon:
 - [ ] On Pantheon, set up a Pantheon site.
 - [ ] In the repo, give `env.dist` a TERMINUS_SITE and TS_HOST_REPO
