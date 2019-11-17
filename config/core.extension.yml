@@ -8,7 +8,6 @@ module:
   comment: 0
   config: 0
   config_filter: 0
-  config_rewrite: 0
   config_split: 0
   contact: 0
   contextual: 0
