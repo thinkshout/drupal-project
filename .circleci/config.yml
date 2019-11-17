@@ -40,7 +40,7 @@ jobs:
 #          command: |
 #             export PATH="./vendor/bin:../vendor/bin:/root/.composer/vendor/bin:$PATH"
 #             phpcs --config-set installed_paths ../../drupal/coder/coder_sniffer/
-#             phpcs --standard=Drupal --ignore=*/css/*,*/node_modules/*,*/dist/*,README.md /var/www/html/encp/web/modules/custom /var/www/html/encp/web/themes/custom
+#             phpcs --standard=Drupal --ignore=*/css/*,*/node_modules/*,*/dist/*,README.md /var/www/html/drupal-project/web/modules/custom /var/www/html/drupal-project/web/themes/custom
 #      - deploy:
 #          command: |
 #            BRANCH_PATTERN='^[-0-9a-z]{1,11}$'
