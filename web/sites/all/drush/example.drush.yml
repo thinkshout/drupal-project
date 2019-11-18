@@ -1,0 +1,5 @@
+# Rename this drush.yml to overwrite local drush uri.
+# This allows you to do `drush uli` without specifying the
+# --uri option on your local site.
+options:
+  uri: 'https://web.drupal-project.localhost/'
