@@ -13,3 +13,7 @@ workflows:
       - type: webphp
         description: Log deployment to New Relic
         script: scripts/pantheon/new_relic_deploy.php
+protected_web_paths:
+  - /autodiscover/autodiscover.xml
+  - /AutoDiscover/autodiscover.xml
+  - /wp-login.php
