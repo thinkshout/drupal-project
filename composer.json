@@ -74,7 +74,6 @@
         "mikey179/vfsstream": "~1.2",
         "pantheon-systems/ci-scripts": "*",
         "phpunit/phpunit": ">=4.8.28 <5",
-        "symfony/css-selector": "~2.8",
         "thinkshout/robo-drupal": "^v2.0.2"
     },
     "conflict": {
