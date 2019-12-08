@@ -27,13 +27,13 @@ jobs:
             composer global require -n "consolidation/cgr"
             cgr "pantheon-systems/terminus:~1"
             composer install --prefer-dist
-            robo configure --db-name=drupal --db-user=drupal --db-pass=drupal --db-host=127.0.0.1
-      - run:
-          name: Install and test
-          command: |
-            export PATH="./vendor/bin:../vendor/bin:/root/.composer/vendor/bin:$PATH"
-            robo install
-            robo test --profile ci
+#            robo configure --db-name=drupal --db-user=drupal --db-pass=drupal --db-host=127.0.0.1
+#      - run:
+#          name: Install and test
+#          command: |
+#            export PATH="./vendor/bin:../vendor/bin:/root/.composer/vendor/bin:$PATH"
+#            robo install
+#            robo test --profile ci
 #      - deploy:
 #          command: |
 #            BRANCH_PATTERN='^[-0-9a-z]{1,11}$'
