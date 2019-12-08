@@ -22,11 +22,12 @@ jobs:
       - run:
           name: Project configuration
           command: |
+            echo "memory_limit = 512M"  >> ${php_vars}
             export PATH="./vendor/bin:../vendor/bin:/root/.composer/vendor/bin:$PATH"
             composer global require -n "hirak/prestissimo:^0.3"
             composer global require -n "consolidation/cgr"
             cgr "pantheon-systems/terminus:~1"
-            COMPOSER_MEMORY_LIMIT=-1 composer install --prefer-dist
+            composer install --prefer-dist
             robo configure --db-name=drupal --db-user=drupal --db-pass=drupal --db-host=127.0.0.1
       - run:
           name: Install and test
