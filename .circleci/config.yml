@@ -26,7 +26,7 @@ jobs:
             composer global require -n "hirak/prestissimo:^0.3"
             composer global require -n "consolidation/cgr"
             cgr "pantheon-systems/terminus:~1"
-            composer install --prefer-dist
+            COMPOSER_MEMORY_LIMIT=-1 composer install --prefer-dist
             robo configure --db-name=drupal --db-user=drupal --db-pass=drupal --db-host=127.0.0.1
       - run:
           name: Install and test
