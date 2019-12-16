@@ -55,6 +55,7 @@
         "drush/drush": "^10.0",
         "symfony/config": "^3.4.0",
         "symfony/dependency-injection": "^3.4.0",
+        "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.2",
         "webmozart/path-util": "^2.3"
     },
@@ -87,7 +88,8 @@
     "autoload": {
         "classmap": [
             "scripts/composer/ScriptHandler.php"
-        ]
+        ],
+        "files": ["load.environment.php"]
     },
     "scripts": {
         "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
