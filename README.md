@@ -90,6 +90,16 @@ The structure of `DEFAULT_PRESSFLOW_SETTINGS` if you want to set it locally is:
 DEFAULT_PRESSFLOW_SETTINGS_={"databases":{"default":{"default":{"driver":"mysql","prefix":"","database":"","username":"root","password":"root","host":"localhost","port":3306}}},"conf":{"pressflow_smart_start":true,"pantheon_binding":null,"pantheon_site_uuid":null,"pantheon_environment":"local","pantheon_tier":"local","pantheon_index_host":"localhost","pantheon_index_port":8983,"redis_client_host":"localhost","redis_client_port":6379,"redis_client_password":"","file_public_path":"sites\/default\/files","file_private_path":"sites\/default\/files\/private","file_directory_path":"site\/default\/files","file_temporary_path":"\/tmp","file_directory_temp":"\/tmp","css_gzip_compression":false,"js_gzip_compression":false,"page_compression":false},"hash_salt":"","config_directory_name":"sites\/default\/config","drupal_hash_salt":""}
 ```
 
+### Configure Drush
+
+Drush options can be configured in the `.env` file. For example, to set a default uri for commands like `drush uli`, add this:
+
+```
+DRUSH_OPTIONS_URI="https://web.new-project-name.localhost"
+```
+
+[Drush configuration docs](https://github.com/drush-ops/drush/blob/master/docs/using-drush-configuration.md)
+
 ### Installing
 
 Running the robo install command will run composer install to add all required

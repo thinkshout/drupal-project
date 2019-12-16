@@ -53,6 +53,7 @@
         "drupal/smart_trim": "^1.1",
         "drupal/token": "^1.1",
         "drush/drush": "^10.0",
+        "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.2",
         "webmozart/path-util": "^2.3"
     },
@@ -85,7 +86,8 @@
     "autoload": {
         "classmap": [
             "scripts/composer/ScriptHandler.php"
-        ]
+        ],
+        "files": ["load.environment.php"]
     },
     "scripts": {
         "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
