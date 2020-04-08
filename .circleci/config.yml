@@ -43,9 +43,9 @@ jobs:
 #             phpcs --standard=Drupal --ignore=*/css/*,*/node_modules/*,*/dist/*,README.md /var/www/html/drupal-project/web/modules/custom /var/www/html/drupal-project/web/themes/custom
 #      - deploy:
 #          command: |
+#            export PATH="./vendor/bin:../vendor/bin:/root/.composer/vendor/bin:$PATH"
 #            BRANCH_PATTERN='^[-0-9a-z]{1,11}$'
 #            if [[ ${CIRCLE_BRANCH} =~  $BRANCH_PATTERN ]]; then
-#              export PATH="./vendor/bin:../vendor/bin:/root/.composer/vendor/bin:$PATH"
 #              terminus auth:login --machine-token=$PANTHEON_TOKEN
 #              robo pantheon:deploy --install --y
 #            fi
