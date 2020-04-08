@@ -21,7 +21,8 @@
         "drupal/core-recommended": "^8.8"
     },
     "require-dev": {
-        "drupal/core-dev": "^8.8"
+        "drupal/core-dev": "^8.8",
+        "thinkshout/robo-drupal": "^2.0"
     },
     "conflict": {
         "drupal/drupal": "*"
