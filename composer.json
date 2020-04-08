@@ -57,6 +57,7 @@
         "drupal/config_suite": "^1.1",
         "drupal/console": "^1.9",
         "drupal/devel": "^1.0-rc1",
+        "drupal/drupal-extension": "^4.0",
         "drupal/stage_file_proxy": "1.x-dev",
         "drupal/twig_xdebug": "^1.0",
         "drush-ops/behat-drush-endpoint": "dev-master",
