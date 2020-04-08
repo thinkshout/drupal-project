@@ -45,8 +45,6 @@
         "drupal/simple_sitemap": "^2.12",
         "drupal/smart_trim": "^1.1",
         "drush/drush": "^10.0",
-        "symfony/config": "^3.4.0",
-        "symfony/dependency-injection": "^3.4.0",
         "webflo/drupal-finder": "^1.2",
         "webmozart/path-util": "^2.3",
         "zaporylie/composer-drupal-optimizations": "^1.1"
