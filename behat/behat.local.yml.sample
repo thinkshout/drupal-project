@@ -5,7 +5,7 @@
 #
 local:
   extensions:
-    Behat\MinkExtension:
+    Drupal\MinkExtension:
       base_url: http://site.dev/
     Drupal\DrupalExtension:
       drupal:

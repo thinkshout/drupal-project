@@ -15,7 +15,7 @@ default:
         - Drupal\DrupalExtension\Context\DrushContext
   extensions:
     DMore\ChromeExtension\Behat\ServiceContainer\ChromeExtension: ~
-    Behat\MinkExtension:
+    Drupal\MinkExtension:
       goutte: ~
       browser_name: chrome
       sessions:
