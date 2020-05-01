@@ -4,7 +4,7 @@
 #
 ci:
   extensions:
-    Behat\MinkExtension:
+    Drupal\MinkExtension:
       base_url: http://127.0.0.1/
     Drupal\DrupalExtension:
       drupal:
