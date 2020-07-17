@@ -53,6 +53,15 @@ git remote add origin git@github.com:thinkshout/new-project-name.git
 git push -u origin master
 ```
 
+Rename the master branch to "production":
+
+```
+git checkout -b production
+git push --set-upstream origin production
+git branch -d master
+git push origin --delete master
+```
+
 To initialize the project name in several of the files run:
 
 ```
@@ -82,6 +91,8 @@ robo configure
 robo configure --db-pass=<YOUR LOCAL DATABASE PASSWORD>
 # Use an alternate DB name
 robo configure --db-name=<YOUR DATABASE NAME>
+# Use an alternate release/production/live branch name
+robo configure --prod-branch=<YOUR BRANCH NAME>
 ```
 
 The structure of `DEFAULT_PRESSFLOW_SETTINGS` if you want to set it locally is:
