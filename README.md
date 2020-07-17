@@ -47,19 +47,14 @@ Initialize a repository on github https://github.com/new that matches your proje
 
 ```
 git init
+git checkout -b develop
 git add .
 git commit -m "Initial commit."
 git remote add origin git@github.com:thinkshout/new-project-name.git
-git push -u origin master
-```
-
-Rename the master branch to "production":
-
-```
+git push -u origin develop
 git checkout -b production
 git push --set-upstream origin production
-git branch -d master
-git push origin --delete master
+git checkout develop
 ```
 
 To initialize the project name in several of the files run:
