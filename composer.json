@@ -119,7 +119,7 @@
         "patches": {
             "drupal/core": {
                 "Database::startLog() cause a notice in Shortcut::sort()": "https://www.drupal.org/files/issues/2019-12-05/2567035-51.patch",
-                "Plugin Lazy loading can cause usort warning": "https://www.drupal.org/files/issues/2699157-23.drupal.Plugin-Lazy-loading-can-cause-usort-warning.patch"
+                "Plugin Lazy loading can cause usort warning": "https://www.drupal.org/files/issues/2020-06-22/2699157-38.drupal.Plugin-Lazy-loading-can-cause-usort-warning.patch"
             },
             "drupal/ctools": {
                 "Views exposed filters missing autosubmit option https://www.drupal.org/node/2475595": "https://www.drupal.org/files/issues/2475595-ctools-autocomplete-fix-24.patch"
