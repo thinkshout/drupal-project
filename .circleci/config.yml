@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-       - image: thinkshout/nginx-php-fpm:php72
+       - image: thinkshout/nginx-php-fpm:php73
          environment:
            WEBROOT: /var/www/html/drupal-project/web
            GIT_EMAIL: "ci@thinkshout.com"
@@ -24,9 +24,6 @@ jobs:
           name: Project configuration
           command: |
             export PATH="./vendor/bin:../vendor/bin:/root/.composer/vendor/bin:$PATH"
-            composer global require -n "hirak/prestissimo:^0.3"
-            composer global require -n "consolidation/cgr"
-            cgr "pantheon-systems/terminus:~2"
             COMPOSER_MEMORY_LIMIT=-1 composer install --prefer-dist
             robo configure --db-name=drupal --db-user=drupal --db-pass=drupal --db-host=127.0.0.1
       - run:
