@@ -52,9 +52,6 @@ git add .
 git commit -m "Initial commit."
 git remote add origin git@github.com:thinkshout/new-project-name.git
 git push -u origin develop
-git checkout -b production
-git push --set-upstream origin production
-git checkout develop
 ```
 
 To initialize the project name in several of the files run:

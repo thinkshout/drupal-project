@@ -28,7 +28,7 @@ jobs:
             composer global require -n "consolidation/cgr"
             cgr "pantheon-systems/terminus:~2"
             COMPOSER_MEMORY_LIMIT=-1 composer install --prefer-dist
-            robo configure --db-name=drupal --db-user=drupal --db-pass=drupal --db-host=127.0.0.1 --prod-branch=production
+            robo configure --db-name=drupal --db-user=drupal --db-pass=drupal --db-host=127.0.0.1 --prod-branch=main
       - run:
           name: Install and test
           command: |
