@@ -63,7 +63,8 @@
         "jcalderonzumba/mink-phantomjs-driver": "~0.3.1",
         "mikey179/vfsstream": "~1.2",
         "phpunit/phpunit": ">=4.8.28 <5",
-        "thinkshout/robo-drupal": "^v3.0.0"
+        "thinkshout/robo-drupal": "^v3.0.0",
+        "zaporylie/composer-drupal-optimizations": "^1.1"
     },
     "conflict": {
         "drupal/drupal": "*"
